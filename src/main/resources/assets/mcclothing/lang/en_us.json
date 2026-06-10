@@ -1,0 +1,29 @@
+{
+  "item.mcclothing.overalls": "Overalls",
+  "item.mcclothing.apron": "Apron",
+  "item.mcclothing.t_shirt": "T-Shirt",
+  "item.mcclothing.vest": "Vest",
+  "item.mcclothing.pants": "Pants",
+  "item.mcclothing.shorts": "Shorts",
+
+  "block.mcclothing.tailors_loom": "Tailor's Loom",
+  "container.mcclothing.tailors_loom": "Tailor's Loom",
+
+  "trinkets.slot.chest.shirt": "Shirt",
+  "trinkets.slot.chest.apron": "Apron",
+  "trinkets.slot.legs.pants": "Pants",
+
+  "pattern.mcclothing.stripe.white": "White Stripe",
+  "pattern.mcclothing.checkered.white": "White Checkered",
+  "pattern.mcclothing.plaid.white": "White Plaid",
+  "pattern.mcclothing.pocket.white": "White Pocket",
+  "pattern.mcclothing.hem_trim.white": "White Hem Trim",
+  "pattern.mcclothing.collar.white": "White Collar",
+  "pattern.mcclothing.embroidery.white": "White Embroidery",
+  "pattern.mcclothing.patch.white": "White Patch",
+
+  "tooltip.mcclothing.more_patterns": "+%s more pattern(s)",
+  "tooltip.mcclothing.warmth.light":  "Warmth: Light",
+  "tooltip.mcclothing.warmth.medium": "Warmth: Medium",
+  "tooltip.mcclothing.warmth.heavy":  "Warmth: Heavy"
+}

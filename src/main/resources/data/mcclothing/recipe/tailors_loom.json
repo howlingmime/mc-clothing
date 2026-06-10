@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "SS",
+    "PP"
+  ],
+  "key": {
+    "S": { "item": "minecraft:string" },
+    "P": { "tag": "minecraft:planks" }
+  },
+  "result": { "id": "mcclothing:tailors_loom", "count": 1 }
+}

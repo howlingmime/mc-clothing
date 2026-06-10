@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "mcclothing:overalls",
+    "mcclothing:apron",
+    "mcclothing:t_shirt",
+    "mcclothing:vest",
+    "mcclothing:pants",
+    "mcclothing:shorts"
+  ]
+}

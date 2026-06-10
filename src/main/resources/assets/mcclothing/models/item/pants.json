@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mcclothing:item/pants",
+    "layer1": "mcclothing:item/pants_overlay"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "mcclothing:block/tailors_loom" },
+    "facing=south": { "model": "mcclothing:block/tailors_loom", "y": 180 },
+    "facing=east":  { "model": "mcclothing:block/tailors_loom", "y": 90 },
+    "facing=west":  { "model": "mcclothing:block/tailors_loom", "y": 270 }
+  }
+}

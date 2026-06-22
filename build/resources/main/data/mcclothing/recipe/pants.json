@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "WWW",
+    "W W",
+    "W W"
+  ],
+  "key": {
+    "W": { "tag": "minecraft:wool" }
+  },
+  "result": { "id": "mcclothing:pants", "count": 1 }
+}

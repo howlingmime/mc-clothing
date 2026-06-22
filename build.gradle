@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.7-SNAPSHOT'
+    id 'fabric-loom' version '1.10.4'
     id 'maven-publish'
 }
 
@@ -9,12 +9,15 @@ base { archivesName = project.archives_base_name }
 
 repositories {
     maven {
-        url = 'https://maven.ladysnake.org/releases'
-        content { includeGroup 'dev.emi' }
+        url = 'https://maven.terraformersmc.com/releases/'
+        content {
+            includeGroup 'com.terraformersmc'
+            includeGroup 'dev.emi'
+        }
     }
     maven {
-        url = 'https://maven.terraformersmc.com/releases/'
-        content { includeGroup 'com.terraformersmc' }
+        url = 'https://maven.ladysnake.org/releases'
+        content { includeGroupByRegex 'org\\.ladysnake.*' }
     }
 }
 
@@ -48,6 +51,3 @@ java {
     targetCompatibility = JavaVersion.VERSION_21
 }
 
-jar {
-    from('LICENSE') { rename { "${it}_${project.archives_base_name}" } }
-}

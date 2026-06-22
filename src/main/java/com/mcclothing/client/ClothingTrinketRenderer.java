@@ -21,7 +21,6 @@ import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.DyedColorComponent;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
 import java.util.EnumMap;
@@ -57,12 +56,10 @@ public final class ClothingTrinketRenderer implements TrinketRenderer {
         // Base layer: cloth color from DyedColorComponent.
         DyedColorComponent dye = stack.get(DataComponentTypes.DYED_COLOR);
         int rgb = dye != null ? dye.rgb() : clothing.defaultColor();
+        int argb = 0xFF000000 | (rgb & 0xFFFFFF);
         Identifier baseTex = MCClothing.id("textures/entity/clothing/" + textureName(clothing.shape()) + ".png");
         VertexConsumer vc = provider.getBuffer(RenderLayer.getEntityTranslucent(baseTex));
-        float r = ((rgb >> 16) & 0xFF) / 255f;
-        float g = ((rgb >> 8)  & 0xFF) / 255f;
-        float b = ( rgb        & 0xFF) / 255f;
-        model.render(matrices, vc, light, OverlayTexture.DEFAULT_UV, r, g, b, 1f);
+        model.render(matrices, vc, light, OverlayTexture.DEFAULT_UV, argb);
 
         // Pattern overlays.
         ClothingPatternsComponent patterns = stack.get(com.mcclothing.component.ModDataComponents.CLOTHING_PATTERNS);
@@ -72,9 +69,9 @@ public final class ClothingTrinketRenderer implements TrinketRenderer {
                 if (pattern == null) continue;
                 Identifier patTex = MCClothing.id(
                     "textures/entity/clothing/pattern/" + pattern.assetId().getPath() + ".png");
-                float[] cc = colorComponents(entry.color());
+                int patArgb = 0xFF000000 | (entry.color().getEntityColor() & 0xFFFFFF);
                 VertexConsumer pvc = provider.getBuffer(RenderLayer.getEntityTranslucent(patTex));
-                model.render(matrices, pvc, light, OverlayTexture.DEFAULT_UV, cc[0], cc[1], cc[2], 1f);
+                model.render(matrices, pvc, light, OverlayTexture.DEFAULT_UV, patArgb);
             }
         }
     }
@@ -91,11 +88,6 @@ public final class ClothingTrinketRenderer implements TrinketRenderer {
 
     private static String textureName(ClothingShape shape) {
         return shape.name().toLowerCase(java.util.Locale.ROOT);
-    }
-
-    private static float[] colorComponents(DyeColor color) {
-        float[] c = color.getColorComponents();
-        return new float[] { c[0], c[1], c[2] };
     }
 
     public static void register() {

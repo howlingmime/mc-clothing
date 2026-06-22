@@ -2,7 +2,7 @@ package com.mcclothing.item;
 
 import com.mcclothing.component.ModDataComponents;
 import com.mcclothing.pattern.ClothingPatternsComponent;
-import net.minecraft.client.item.TooltipType;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.DyedColorComponent;
 import net.minecraft.item.Item;

@@ -1,0 +1,6 @@
+{
+  "replace": false,
+  "icon": "mcclothing:item/empty_pants_slot",
+  "order": 100,
+  "amount": 1
+}

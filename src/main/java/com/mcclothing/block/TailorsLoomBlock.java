@@ -41,12 +41,12 @@ public class TailorsLoomBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (world.isClient) return ActionResult.SUCCESS;
-        player.openHandledScreen(createScreenHandlerFactory(state, world, pos));
+        player.openHandledScreen(loomFactory(state, world, pos));
         player.incrementStat(Stats.INTERACT_WITH_LOOM);
         return ActionResult.CONSUME;
     }
 
-    private NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
+    private NamedScreenHandlerFactory loomFactory(BlockState state, World world, BlockPos pos) {
         return new SimpleNamedScreenHandlerFactory(
             (syncId, inv, player) -> new TailorsLoomScreenHandler(syncId, inv, ScreenHandlerContext.create(world, pos)),
             Text.translatable("container.mcclothing.tailors_loom"));

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "mcclothing",
+  "version": "0.1.0",
+  "name": "MC Clothing",
+  "description": "Dyeable, pattern-customizable clothing layers (overalls, aprons, t-shirts, vests, pants, shorts) that drape over the player and provide warmth.",
+  "authors": ["mc-clothing"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.mcclothing.MCClothing"],
+    "client": ["com.mcclothing.MCClothingClient"]
+  },
+  "mixins": [
+    "mcclothing.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*",
+    "trinkets": ">=3.10.0"
+  }
+}
